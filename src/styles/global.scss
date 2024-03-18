@@ -1,0 +1,15 @@
+@font-face {
+    font-family: vazir;
+    src: url(../assets/fonts/Vazir-Medium-FD.woff2);
+}
+body {
+
+    direction: rtl;
+    font-family: vazir;
+    
+    *{
+        direction: rtl;
+        
+    }
+
+}
