@@ -5,11 +5,11 @@ import AdminFooter from "../../components/Admin/footer";
 
 const Layout = () => {
     return ( 
-        <div className="d-flex">
+        <div className="d-flex min-vh-100">
       <AdminSidebar />
-      <div className=" d-flex flex-column w-100  bg-light rounded">
+      <div className="d-flex flex-column w-100 bg-light">
         <AdminHeader />
-        <div className=" shadow bg-body flex-grow-1 rounded-2 p-4 border border-warning m-4">
+        <div className="shadow bg-body flex-grow-1 rounded-2 p-3 border  m-3"  >
           <AdminContent />
         </div>
           

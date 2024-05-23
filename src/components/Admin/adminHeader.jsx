@@ -15,7 +15,7 @@ import {
   CHeaderDivider } from "@coreui/react";
 import CIcon from "@coreui/icons-react";
 import { cilMenu  ,cilEnvelopeClosed,cilBell,cilList} from "@coreui/icons";
-import {logo} from '../../assets/brand/logo'
+// import {logo} from '../../assets/brand/logo'
 import { NavLink } from "react-router-dom";
 
 import Avatar1 from '../../assets/images/avatars/1.jpg'
@@ -24,7 +24,7 @@ const AdminHeader = () => {
   const dispatch = useDispatch()
   const sidebarShow = useSelector((state) => state.sidebarShow)
     return ( 
-        <CHeader position="fixed" className=" mb-3 border-bottom  border-warning ">
+        <CHeader position="fixed" className=" mb-3   bg-light ">
         <CContainer fluid>
         <CHeaderToggler
           className="ps-1"
@@ -32,10 +32,10 @@ const AdminHeader = () => {
         >
           <CIcon icon={cilMenu} size="lg" />
         </CHeaderToggler>
-        <CHeaderBrand className="mx-auto d-md-none" to="/">
+        {/* <CHeaderBrand className="mx-auto d-md-none" to="/">
           <CIcon icon={logo} height={48} alt="Logo" />
-        </CHeaderBrand>
-        <CHeaderNav className="d-none d-md-flex mx-0 p-0">
+        </CHeaderBrand> */}
+        <CHeaderNav className="d-none d-md-flex mx-0 p-0 ">
           <CNavItem href="Dashbord">
             {/* <CNavLink to="/dashboard" component={NavLink}> */}
               داشبورد
@@ -46,7 +46,7 @@ const AdminHeader = () => {
           </CNavItem>
          
         </CHeaderNav>
-        <CHeaderNav className="me-auto">
+        <CHeaderNav className="me-auto ">
           <CNavItem>
             <CNavLink href="#">
               <CIcon icon={cilBell} size="lg" />
@@ -63,9 +63,9 @@ const AdminHeader = () => {
             </CNavLink>
           </CNavItem>
         </CHeaderNav>
-        <CHeaderNav className="mx-1 ">
+        {/* <CHeaderNav className="mx-1 ">
           <CAvatar src={Avatar1}  size="lg"/>
-        </CHeaderNav>
+        </CHeaderNav> */}
         {/* <CHeaderDivider /> */}
       </CContainer>
          

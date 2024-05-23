@@ -3,30 +3,9 @@
 
 
 
-.login{
-    background-image:url(../assets/images/bac11.jpg);
-   .row{
-    width: 50%;
-    position: relative;
-    right: 100px;
-   }
-   .card{
-    background-color: rgb(139, 206, 191) ;
-   }
-   .btn1{
-    // width: 300px;
-    background-color: rgb(199, 21, 133) ;
-   }
-}
-
-.register{
-    background-image:url(../assets/images/bac11.jpg);
-
-    .card{
-        background-color: rgb(199, 21, 133) ;
-    }
-    .btn{
-        background-color: rgb(20, 204, 164) ;
-        border: 0px;
-    }
+.link{
+    
+    text-decoration: none;
+    color: rgb(21, 26, 54);
+    margin-bottom: 10px;
 }

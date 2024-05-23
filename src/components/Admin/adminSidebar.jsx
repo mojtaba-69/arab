@@ -10,11 +10,13 @@ import{
     CRow,
     CCol,
     CAvatar,
-    CNavLink
+    CNavLink,
+   
     } from '@coreui/react';
     import CIcon from '@coreui/icons-react';
-import {cilSpeedometer } from '@coreui/icons';
-
+import {cilSpeedometer ,cilCog,cilPowerStandby ,cilNewspaper,cilPeople,cilStorage} from '@coreui/icons';
+import { Link } from 'react-router-dom';
+import Avatar1 from '../../assets/images/avatars/1.jpg'
 
 
 
@@ -24,70 +26,107 @@ const AdminSidebar = () => {
  const sidebarshow = useSelector((state) => state.sidebarShow)
     return ( 
         <CSidebar 
+        // className='bg-body'
         unfoldable ={unfolable}
         visible={sidebarshow}
         onVisibleChange={(visible) => {
           dispatch({type:'set' , sidebarshow : visible})
         }} >
-  <CSidebarBrand className='shadow text-danger '>
+  <CSidebarBrand >
     <h5 className='m-3'>پنل مدیریت</h5>
   </CSidebarBrand>
-  <CSidebarNav>
-    
-    <CNavItem href='Dashbord' className="px-1">
-      <CIcon customClassName="nav-icon" icon={cilSpeedometer} />
-      داشبورد
+  <CNavItem className="mx-auto  d-flex flex-column gap-2 mt-3 align-items-center">
+          <CAvatar src={Avatar1}  size="lg"/>
+          <span>نام کاربری </span>
+          <div className='d-flex text-secondary gap-2  mx-auto mt-1'>
+          <CIcon icon={cilCog} />
+          <CIcon icon={cilPowerStandby} />
+          </div>
+          </CNavItem>
+        
+        
+  <CSidebarNav className="mt-4">
+    <Link to={"/Dashbord"} className='link'>
+    <CNavItem  className="d-flex px-2 grow-1 text-secondary">
+      <CIcon customClassName="nav-icon text-secondary " icon={cilSpeedometer} />
+      <span>داشبورد</span>
     </CNavItem>
+    </Link>
+    
    
     
     
     {/* مدیریت کاریران */}
-    <CNavGroup toggler="مدیریت کاربران">
-      <CNavItem  href='UserManage'> 
-      {/* <CNavLink to="/userManage" component={UserManage}/> */}
- 
+    <div className='d-flex mt-2 '>
+    <CIcon customClassName="nav-icon text-secondary my-auto " icon={cilPeople} />
+    <CNavGroup  toggler="مدیریت کاربران" className='tex-secondary width-auto flex-fill'>
+    
+      <div className='d-flex  flex-column grow-1 me-5'>
+     <Link to={'UrersForm'} className='link'>
+     
+     <CNavItem >ثبت کاربران</CNavItem>
+     </Link>
+      <Link to={'UserManage'} className='link  ' >
+      <CNavItem> 
       ویرایش کاربران
       </CNavItem>
-      <CNavItem href='UrersForm'>کاربران</CNavItem>
+      </Link>
+     </div>
     </CNavGroup>
+    </div>
+    
     {/*آگهی ها */}
-    <CNavGroup toggler="مدیریت آگهی ها">
-      <CNavItem href="AdForm">ثبت آگهی</CNavItem>
-      <CNavItem href="AdManagement">ویرایش آگهی ها</CNavItem>
-    </CNavGroup>
-    {/*آگهی ها */}
-    <CNavGroup toggler="مدیریت دسته های آگهی ">
-      <CNavItem href="#">دسته بندی آگهی ها</CNavItem>
-      <CNavItem href="#">ویرایش آگهی ها</CNavItem>
-    </CNavGroup>
-    {/*درخواست ها */}
-    <CNavGroup toggler="مدیریت درخواست ها ">
-      <CNavItem href="#">دسته بندی آگهی ها</CNavItem>
-      <CNavItem href="#">ویرایش آگهی ها</CNavItem>
-    </CNavGroup>
-    {/*مقالات*/}
-    <CNavGroup toggler="مدیریت مقالات ">
-      <CNavItem href="#">دسته بندی آگهی ها</CNavItem>
-      <CNavItem href="#">ویرایش آگهی ها</CNavItem>
-    </CNavGroup>
-    {/*دسته های مقاله*/}
-    <CNavGroup toggler="مدیریت دسته های مقاله ">
-      <CNavItem href="#">دسته بندی آگهی ها</CNavItem>
-      <CNavItem href="#">ویرایش آگهی ها</CNavItem>
-    </CNavGroup>
-    {/*دسته های مقاله*/}
-    <CNavGroup toggler="مدیریت دسته های مقاله ">
-      <CNavItem href="#">دسته بندی آگهی ها</CNavItem>
-      <CNavItem href="#">ویرایش آگهی ها</CNavItem>
-    </CNavGroup>
-    <CNavItem> 
-    <CNavLink href='Login' >Login</CNavLink>
+    <div className='d-flex '>
+    <CIcon customClassName="nav-icon text-secondary my-auto" icon={cilNewspaper} />
+    <CNavGroup toggler="مدیریت آگهی ها" className='tex-secondary flex-fill'>
+    <div className='d-flex  flex-column grow-1 me-5'>
+      <Link to={"AdForm"} className='link'>
+      <CNavItem>ثبت آگهی</CNavItem>
+      </Link>
       
-    </CNavItem>
+      <Link to={"AdManagement"} className='link'>
+        <CNavItem >ویرایش آگهی ها</CNavItem>
+      </Link>
+      </div>
+    </CNavGroup>
+    </div>
+    
+    {/*آگهی ها */}
+    <div className='d-flex '>
+    <CIcon customClassName="nav-icon text-secondary my-auto" icon={cilNewspaper} />
+    <CNavGroup toggler="مدیریت دسته های آگهی " className='tex-secondary flex-fill'>
+    <div className='d-flex  flex-column grow-1 me-5'>
+      <Link to={""} className='link'>
+      <CNavItem >دسته بندی آگهی ها</CNavItem>
+      </Link>
+      
+      <Link to={""} className='link'>
+      <CNavItem >ویرایش دسته های آگهی</CNavItem>
+      </Link>
+      </div>
+    </CNavGroup>
+    </div>
+    
+    {/*درخواست ها */}
+    {/* <CNavGroup toggler="مدیریت درخواست ها " className='tex-secondary mt-2 me-2'>
+    <div className='d-flex  flex-column grow-1 me-5'>
+      <CNavItem href="#">دسته بندی آگهی ها</CNavItem>
+      <CNavItem href="#">ویرایش آگهی ها</CNavItem>
+      </div>
+    </CNavGroup> */}
+
+    {/*مقالات*/}
+    {/* <CNavGroup toggler="مدیریت مقالات ">
+    <div className='d-flex  flex-column grow-1 me-5'>
+      <CNavItem href="#">دسته بندی آگهی ها</CNavItem>
+      <CNavItem href="#">ویرایش آگهی ها</CNavItem>
+      </div>
+    </CNavGroup> */}
+   
   </CSidebarNav>
   <CSidebarToggler
-        // className="d-none d-lg-flex"
-        // onClick={() => dispatch({ type: 'set', sidebarUnfoldable: !unfolable })}
+        
+        onClick={() => dispatch({ type: 'set', sidebarUnfoldable: !unfolable })}
       />
 </CSidebar>
 

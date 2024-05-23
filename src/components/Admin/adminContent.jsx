@@ -16,7 +16,7 @@ const AdminContent = () => {
     
             <Routes>
               <Route path='/Dashbord' element={<Dashbord/>}/>
-              <Route index element={<Home/>}/>
+              {/* <Route index element={<Home/>}/> */}
               <Route path='/UrersForm' element={<UrersForm/>}/>
               <Route path='/UserManage' element={<UserManage/>}/>
               <Route path='/AdForm' element={<AdForm/>}/>
